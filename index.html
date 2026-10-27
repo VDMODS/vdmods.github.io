@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VDMODS | Bio</title>
+<script>
+  try {
+    var _t = localStorage.getItem('dh_theme');
+    if (_t === 'dark' || (!_t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  } catch(e){}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+  
+  :root {
+    --bg: #f5f6fb; --text: #101828; --card-bg: #ffffff; 
+    --primary: #3b82f6; --primary-hover: #2563eb;
+    --border: #e5e7eb; --text-mut: #6b7280;
+  }
+  html.dark {
+    --bg: #0a101f; --text: #e8ecf8; --card-bg: #121a33;
+    --border: rgba(255,255,255,0.1); --text-mut: #8b96b8;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    padding: 20px; padding-top: env(safe-area-inset-top, 20px);
+    transition: background 0.3s, color 0.3s;
+  }
 
+  /* Avatar & Header */
+  .profile-header { display: flex; flex-direction: column; align-items: center; margin-top: 30px; text-align: center; }
+  .avatar-wrap { position: relative; width: 100px; height: 100px; margin-bottom: 15px; }
+  .avatar-wrap img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid #6a5cff; box-shadow: 0 0 20px rgba(106,92,255,0.3); }
+  .verify-badge { position: absolute; bottom: 0; right: 0; width: 24px; height: 24px; background: #0d8bf2; border-radius: 50%; border: 2px solid var(--bg); display: flex; justify-content: center; align-items: center; }
+  .verify-badge svg { width: 14px; height: 14px; fill: #fff; }
+  
+  .greeting { font-size: 14px; color: var(--text-mut); margin-bottom: 5px; }
+  .name { font-size: 24px; font-weight: 900; margin-bottom: 5px; letter-spacing: -0.5px; }
+  .bio { font-size: 14px; color: var(--text-mut); margin-bottom: 20px; }
+
+  /* Social Buttons */
+  .socials { display: flex; gap: 10px; margin-bottom: 25px; }
+  .social-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 12px; background: var(--card-bg); border: 1px solid var(--border); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 700; transition: transform 0.2s; }
+  .social-btn:hover { transform: scale(1.05); }
+
+  /* Main Cards Container */
+  .container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+
+  /* Stats Box */
+  .stats-box { background: var(--card-bg); border-radius: 20px; padding: 20px; border: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .stat-item h3 { font-size: 20px; color: #3b82f6; margin-bottom: 5px; }
+  .stat-item p { font-size: 12px; color: var(--text-mut); font-weight: 600; }
+  .stat-badge { grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; gap: 5px; font-size: 14px; font-weight: 800; color: #6a5cff; }
+
+  /* Contact Card */
+  .contact-card { display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); padding: 18px 20px; border-radius: 20px; border: 1px solid var(--border); text-decoration: none; color: var(--text); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .contact-card h4 { font-size: 15px; font-weight: 800; }
+  .contact-card p { font-size: 13px; color: var(--text-mut); margin-top: 3px; }
+  .contact-card svg { width: 20px; height: 20px; color: var(--text-mut); }
+
+  /* Floating Buttons (Music & Guide) */
+  .fab-container { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 50; }
+  .fab { width: 45px; height: 45px; border-radius: 50%; background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(10px); display: flex; justify-content: center; align-items: center; border: 1px solid rgba(255,255,255,0.1); cursor: pointer; color: #fff; }
+  .fab svg { width: 20px; height: 20px; }
+</style>
+</head>
+<body>
+
+  <!-- Profile -->
+  <header class="profile-header">
+    <div class="avatar-wrap">
+      <!-- Thay link ảnh avatar của bạn vào đây -->
+      <img src="https://i.pinimg.com/736x/8a/e9/3b/8ae93b0be5b96593110f781744ef7c4c.jpg" alt="Avatar">
+      <div class="verify-badge">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      </div>
+    </div>
+    <div class="greeting">Xin chào, tôi là</div>
+    <h1 class="name">VDMODS</h1>
+    <p class="bio">Chuyên chia sẻ hack cho anh em</p>
+  </header>
+
+  <!-- Social Buttons -->
+  <nav class="socials">
+    <a href="https://youtube.com/@phmodsofc" class="social-btn" target="_blank">
+      <span style="color: #ff0000;">▶</span> YouTube
+    </a>
+    <a href="https://t.me/phmodsofc" class="social-btn" target="_blank">
+      <span style="color: #0088cc;">✈</span> Telegram
+    </a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Stats Card -->
+    <div class="stats-box">
+      <div class="stat-item">
+        <h3>500 M+</h3>
+        <p>Lượt tải</p>
+      </div>
+      <div class="stat-item">
+        <h3>2026</h3>
+        <p>Cập nhật</p>
+      </div>
+      <div class="stat-badge">
+        <span>#1 🏆</span>
+        <div style="font-size: 11px; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px; margin-left: 10px;">iOS & Android</div>
+      </div>
+    </div>
+
+    <!-- Contact Card -->
+    <a href="https://t.me/phmodsofc" class="contact-card" target="_blank">
+      <div>
+        <h4>LIÊN HỆ HỢP TÁC LÀM ĂN</h4>
+        <p>Trao đổi công việc & hỗ trợ nhanh qua Telegram</p>
+      </div>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    </a>
+
+  </main>
+
+  <!-- Floating Buttons -->
+  <div class="fab-container">
+    <div class="fab" title="Bật/Tắt nhạc">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+    </div>
+    <div class="fab" title="Hướng dẫn">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    </div>
+  </div>
+
+</body>
+  </html>
